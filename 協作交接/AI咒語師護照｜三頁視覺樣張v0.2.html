@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 咒語師護照｜三頁視覺樣張 v0.2</title>
+  <style>
+    :root{--paper:#fdf9f0;--ink:#313a2e;--moss:#4a7a2e;--leaf:#7ab648;--lime:#eaf3d0;--teal:#176e77;--mist:#d9f0ed;--gold:#c9a63c;--line:rgba(74,122,46,.22);--white:#fffdf8;--display:"jf open 粉圓","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:var(--body);letter-spacing:.015em;background:radial-gradient(circle at 8% 0,#eef6d9,transparent 30rem),linear-gradient(135deg,#f0f6e7,#dceeea)}.notice{width:min(1120px,calc(100% - 32px));margin:26px auto 18px;padding:12px 16px;border:1px solid rgba(23,110,119,.18);border-radius:14px;background:rgba(255,253,248,.88);color:#275b5e;font-size:13px;line-height:1.55}.samples{width:min(1120px,calc(100% - 32px));margin:auto;display:grid;gap:28px;padding-bottom:38px}.meta{display:flex;justify-content:space-between;align-items:center;color:#41614a;font-size:13px;font-weight:800}.meta span:last-child{color:#6d866f;font-size:11px;font-weight:500}.sample{position:relative;isolation:isolate;overflow:hidden;background:var(--paper);box-shadow:0 18px 46px rgba(50,78,51,.20)}.sample:before{content:"";position:absolute;z-index:-2;inset:0;opacity:.48;background-image:radial-gradient(rgba(74,122,46,.16) .6px,transparent .6px);background-size:9px 9px;mask-image:linear-gradient(to bottom,black,transparent 30%,transparent 80%,black)}.sample:after{content:"";position:absolute;z-index:-1;width:270px;height:270px;right:-125px;top:-120px;border:40px solid rgba(217,240,237,.72);border-radius:50%}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display)}.a5{width:148mm;min-height:210mm;margin:auto}.spread{width:296mm;min-height:210mm}.eyebrow{display:inline-flex;gap:7px;align-items:center;margin:0;color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.14em}.signal{width:8px;height:8px;border:2px solid var(--teal);border-radius:50%;box-shadow:7px 0 0 -4px var(--teal),13px 0 0 -4px var(--teal)}.pill{display:inline-flex;gap:5px;align-items:center;padding:5px 9px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.88);color:var(--moss);font-size:10px;font-weight:900}.small{color:#687969;font-size:9px;line-height:1.6}
+
+    /* 01 封面與身分 */
+    .cover{padding:16mm 14mm 12mm}.topline{display:flex;justify-content:space-between;align-items:center}.cover h1{position:relative;z-index:1;margin:19mm 0 6px;color:#294d24;font-size:37px;line-height:1.09}.subtitle{position:relative;z-index:1;color:#536952;font-size:13px;font-weight:700;line-height:1.65}.fact{display:inline-flex;position:relative;z-index:1;margin-top:11mm;padding:6px 9px;border-radius:9px;background:rgba(217,240,237,.86);color:#2f6565;font-size:10px;font-weight:900}.mascot{position:absolute;width:106mm;right:-26mm;top:38mm;mix-blend-mode:multiply;filter:drop-shadow(0 9px 7px rgba(54,85,46,.14))}.id-card{position:absolute;left:14mm;right:14mm;bottom:13mm;padding:10mm 9mm 7mm;border:1.5px solid rgba(74,122,46,.35);border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(244,249,232,.92));box-shadow:0 10px 18px rgba(65,94,51,.09)}.id-card:before{content:"咒語師身分";position:absolute;top:-11px;left:17px;padding:4px 10px;border-radius:4px 9px 9px 9px;background:var(--teal);color:white;font-size:10px;font-weight:900;letter-spacing:.08em}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 15px}.field-label{display:block;margin-bottom:4px;color:#648061;font-size:9px;font-weight:900}.write{height:19px;border-bottom:1px solid rgba(74,122,46,.45)}.reminder{margin-top:9px;padding:7px 9px;border-radius:8px;background:#eef6da;color:#4e6839;font-size:9px;font-weight:800}.ability{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:8px}.ability>span{margin-right:3px;color:#648061;font-size:9px;font-weight:900}.tag{display:grid;place-items:center;width:19px;height:19px;border:1px solid rgba(74,122,46,.42);border-radius:6px;color:var(--moss);background:#eff7df;font-size:10px;font-weight:900}.cover-foot{position:absolute;left:14mm;bottom:5.5mm;color:#738373;font-size:8px;letter-spacing:.07em}
+
+    /* 02 四格插頁 */
+    .mission{display:grid;grid-template-columns:1fr 1fr}.mission-page{position:relative;min-height:210mm;padding:14mm 13mm 12mm}.mission-page+.mission-page{border-left:1px dashed rgba(74,122,46,.45);background:linear-gradient(150deg,rgba(217,240,237,.58),rgba(253,249,240,.9) 50%)}.page-top{display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid var(--line);padding-bottom:8px}.page-top h2{margin:3px 0 2px;color:#315c28;font-size:25px}.no{color:var(--leaf);font-family:var(--display);font-size:23px;font-weight:900}.lead{margin:0 0 12px;color:#607260;font-size:11px;font-weight:700;line-height:1.5}.field-card{position:relative;margin:8px 0;padding:9px 10px;border:1px solid rgba(74,122,46,.22);border-radius:12px;background:rgba(255,253,248,.82)}.field-no{display:inline-grid;place-items:center;width:23px;height:23px;margin-right:6px;border-radius:7px 7px 7px 3px;background:var(--moss);color:white;font-size:10px;font-weight:900}.field-card h3{display:inline;color:#3d6235;font-size:12px}.check-row{display:flex;gap:7px;align-items:center;margin-top:7px;color:#516a52;font-size:10px;font-weight:700}.check{display:inline-grid;place-items:center;width:16px;height:16px;border:1.4px solid var(--moss);border-radius:4px;color:var(--moss);font-size:10px}.source{position:relative;margin-top:8px;padding:11px 12px 10px 38px;border:1px solid rgba(23,110,119,.28);border-radius:12px;background:rgba(217,240,237,.67)}.scan{position:absolute;left:11px;top:12px;width:19px;height:19px;border:2px solid var(--teal);border-radius:4px}.scan:after{content:"";position:absolute;width:9px;height:2px;right:-7px;bottom:-4px;background:var(--teal);transform:rotate(-45deg)}.source b{color:var(--teal);font-size:9px;letter-spacing:.09em}.quote{margin:5px 0 0;color:#315d5d;font-family:var(--display);font-size:15px;font-weight:800}.base{margin-top:8px;padding:9px 10px;border-left:4px solid var(--teal);border-radius:9px;background:rgba(217,240,237,.50);color:#416767;font-size:9px;font-weight:700;line-height:1.55}.base b{color:var(--teal)}.writing-card{margin-top:8px;padding:9px 10px;border:1.5px solid rgba(74,122,46,.42);border-radius:12px;background:rgba(255,253,248,.85)}.writing-card h3{margin:0;color:#3d6235;font-size:13px}.writing-card p{margin:3px 0 6px;color:#6a7e68;font-size:9px}.writing-lines{height:32mm;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(8mm - 1px),rgba(74,122,46,.33) calc(8mm - 1px),rgba(74,122,46,.33) 8mm)}.result-line{height:22px;margin-top:7px;border-bottom:1px solid rgba(74,122,46,.36);color:#7a8a79;font-size:10px}.causal{margin-top:9px;padding:10px 11px;border:1.5px solid rgba(74,122,46,.36);border-radius:12px;background:rgba(255,253,248,.82)}.causal h3{margin-bottom:5px;color:var(--moss);font-size:13px}.causal .sentence{margin:0;color:#5e705e;font-size:10px;line-height:1.8}.causal .line{height:18px;border-bottom:1px solid rgba(74,122,46,.32)}.verify{margin-top:11px;padding:10px 12px;border:1px solid rgba(201,166,60,.52);border-radius:12px;background:rgba(255,251,231,.88);color:#715f32;font-size:10px;line-height:1.6}.verify b{display:block;color:#896b14}.bottom{position:absolute;left:13mm;right:13mm;bottom:11mm;padding:8px 9px;border-left:4px solid var(--leaf);background:rgba(239,247,223,.70);color:#536b52;font-size:9px;font-weight:700;line-height:1.55}
+
+    /* 03 能力、簽證、作品預留 */
+    .passport{display:grid;grid-template-columns:1fr 1fr;min-height:210mm}.passport-left,.passport-right{padding:14mm 13mm 12mm}.passport-right{position:relative;border-left:1px dashed rgba(74,122,46,.45);background:linear-gradient(150deg,#e9f2d9,#fdf9f0 68%)}.passport h2{margin:3px 0;color:#315c28;font-size:25px}.badge-map{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.badge{display:grid;grid-template-columns:33px 1fr;gap:7px;align-items:center;min-height:54px;padding:7px;border:1px solid rgba(74,122,46,.21);border-radius:12px;background:rgba(255,253,248,.80)}.badge:last-child{grid-column:1/-1}.badge i{display:grid;place-items:center;width:32px;height:32px;border-radius:10px 10px 10px 4px;background:var(--lime);color:var(--moss);font-size:15px;font-style:normal;font-weight:900}.badge:nth-child(2) i,.badge:nth-child(5) i{background:var(--mist);color:var(--teal)}.badge:nth-child(3) i{background:#f8ecc4;color:#8b6d15}.badge b{display:block;color:#3c6037;font-size:11px}.badge span{color:#71816e;font-size:9px;line-height:1.35}.unlocked{display:flex;gap:8px;align-items:center;margin-top:13px;padding:9px 10px;border-radius:12px;background:#eef6da;color:#4d612f;font-size:10px;font-weight:800}.unlock{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--moss);color:white;font-size:13px}.cards-note{margin-top:11px;padding:9px 10px;border-radius:10px;background:rgba(217,240,237,.54);color:#4a6867;font-size:9px;line-height:1.55}.visa{position:relative;margin-top:9px;padding:11px 12px;border:1.5px solid rgba(74,122,46,.42);border-radius:14px;background:rgba(255,253,248,.89);box-shadow:0 8px 16px rgba(62,92,48,.10)}.visa:after{content:"";position:absolute;right:12px;bottom:11px;width:30px;height:30px;border:2px dashed var(--gold);border-radius:50%}.visa h3{margin:0 0 4px;color:#315c28;font-size:18px}.visa p{margin:0;color:#667765;font-size:10px;line-height:1.6}.visa .rules{margin:8px 0 0;padding-left:16px;color:#536952;font-size:9px;line-height:1.65}.works{margin-top:13px;padding:10px 11px;border:1.5px solid rgba(23,110,119,.34);border-radius:14px;background:rgba(217,240,237,.52)}.works h3{margin:0 0 3px;color:var(--teal);font-size:17px}.works p{margin:0;color:#53706f;font-size:9px}.qr-box{display:grid;place-items:center;width:45mm;height:45mm;margin:8px auto 4px;border:2px dashed rgba(23,110,119,.55);border-radius:8px;background:rgba(255,253,248,.70);color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.08em}.work-line{height:18px;border-bottom:1px solid rgba(23,110,119,.38)}.stamp{position:absolute;right:13mm;bottom:10mm;color:#668166;font-size:8px;font-weight:800;letter-spacing:.08em}
+
+    @media(max-width:1150px){.spread{width:100%}.a5{width:min(100%,560px)}.mission,.passport{grid-template-columns:1fr}.mission-page{min-height:730px}.mission-page+.mission-page,.passport-right{border-left:0;border-top:1px dashed rgba(74,122,46,.45)}.passport-left,.passport-right{min-height:650px}}@media(max-width:560px){.notice,.samples{width:calc(100% - 20px)}.meta span:last-child{display:none}.a5{min-height:700px}.cover{padding:52px 34px 34px}.mascot{width:360px;right:-92px;top:155px}.cover h1{font-size:35px}.id-card{left:34px;right:34px;bottom:48px}.cover-foot{left:34px;bottom:20px}.mission-page,.passport-left,.passport-right{padding:45px 34px 42px}.bottom{left:34px;right:34px;bottom:34px}.badge-map{grid-template-columns:1fr}.badge:last-child{grid-column:auto}.stamp{right:34px;bottom:28px}}@media print{@page{size:A4 landscape;margin:0}body{background:white}.notice,.meta{display:none}.samples{display:block;width:auto;margin:0;padding:0}.samples>article{height:210mm;margin:0;break-after:page}.sample{box-shadow:none}.a5{width:148mm;min-height:210mm;margin:auto}.spread{width:296mm;min-height:210mm}.mission,.passport{grid-template-columns:1fr 1fr}.mission-page{min-height:210mm}.mission-page+.mission-page,.passport-right{border-top:0;border-left:1px dashed rgba(74,122,46,.45)}.passport-left,.passport-right{min-height:210mm}}
+  </style>
+</head>
+<body>
+  <aside class="notice"><strong>視覺校準樣張 v0.2。</strong> 依 Claude 工作指示修改用詞、內容與欄位；色彩、版面語言與小 D 氣質維持 v0.1。這不是印刷定稿。</aside>
+  <main class="samples">
+    <article>
+      <div class="meta"><span>樣張 01｜長期護照封面＋咒語師身分</span><span>不綁任何單堂主題</span></div>
+      <section class="sample a5 cover">
+        <div class="topline"><p class="eyebrow"><i class="signal"></i> SPELLCASTER'S FIELD GUIDE</p><span class="pill">咒語師 001</span></div>
+        <h1>AI<br>咒語師護照</h1>
+        <p class="subtitle">不是叫 AI 幫我完成。<br>是我先把想法說清楚，再讓 AI 幫我把它變好。</p>
+        <div class="fact">孩子做決定　·　AI 幫忙發問</div>
+        <img class="mascot" src="assets/小D_角色概念示意.png" alt="小 D 角色概念示意">
+        <section class="id-card">
+          <div class="fields"><div><span class="field-label">我的咒語師名字</span><div class="write"></div></div><div><span class="field-label">護照編號</span><div class="write"></div></div><div><span class="field-label">我最想練的能力</span><div class="write"></div></div><div><span class="field-label">我的第一堂日期</span><div class="write"></div></div></div>
+          <div class="reminder">小 D 的提醒：先想、先寫，再對 AI 說。</div>
+          <div class="ability"><span>能力地圖</span><i class="tag">說</i><i class="tag">找</i><i class="tag">改</i><i class="tag">問</i><i class="tag">護</i></div>
+        </section>
+        <div class="cover-foot">AI 咒語師護照　/　每堂留下自己的思考與作品</div>
+      </section>
+    </article>
+
+    <article>
+      <div class="meta"><span>樣張 02｜MISSION 01 插頁：基底咒語先成功，升級咒語自己寫</span><span>恰好四格，手寫格行高 8 mm</span></div>
+      <section class="sample spread mission">
+        <section class="mission-page">
+          <div class="page-top"><div><p class="eyebrow"><i class="signal"></i> MISSION 01</p><h2>先說清楚</h2></div><div class="no">01</div></div>
+          <p class="lead">第一版先用手冊的基底咒語成功；我要寫的是讓它變更好的升級咒語。</p>
+          <section class="field-card"><span class="field-no">1</span><h3>我選的來源</h3><div class="check-row"><i class="check">✓</i><span>王維〈送別〉　□ 我已指給 AI 看</span></div></section>
+          <section class="source"><i class="scan"></i><b>SOURCE CARD　來源在這裡</b><div class="quote">「山中相送罷」</div><p class="small">王維〈送別〉；原文要和課本對照，不憑 AI 記憶。</p></section>
+          <section class="base"><b>基底咒語：</b>從手冊整段複製。第一版先穩穩做出來，才有東西可以檢查與升級。</section>
+          <section class="writing-card"><h3>2．我寫給 AI 的話</h3><p>我想讓第一版怎麼變好？先寫好，再輸入。</p><div class="writing-lines"></div></section>
+          <div class="bottom">完成證據：我選了來源，也親手寫下要讓 AI 怎麼改。</div>
+        </section>
+        <section class="mission-page">
+          <div class="page-top"><div><p class="eyebrow"><i class="signal"></i> MISSION 01</p><h2>它有照做嗎？</h2></div><div class="no">02</div></div>
+          <p class="lead">我不照單全收。我要看新版本有沒有真的照我寫的咒語改變。</p>
+          <section class="field-card"><span class="field-no">3</span><h3>它有沒有照做</h3><div class="check-row"><i class="check"></i><span>有照做　　□ 還要再說清楚一次</span></div><div class="result-line">我發現＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div></section>
+          <section class="causal"><h3>4．我的因果句</h3><p class="sentence">我原本＿＿＿＿；我改成＿＿＿＿；所以現在＿＿＿＿。</p><div class="line"></div><div class="line"></div></section>
+          <section class="verify"><b>查證官任務</b>和課本對過 2 題，再蓋查證章。查證完成，才能領任務簽證。</section>
+          <div class="bottom">完成證據：我說得出「它有沒有照做」，也說得出「我怎麼讓它變好」。</div>
+        </section>
+      </section>
+    </article>
+
+    <article>
+      <div class="meta"><span>樣張 03｜能力地圖＋任務簽證＋我的作品預留頁</span><span>長期收集，未實作成果系統</span></div>
+      <section class="sample spread passport">
+        <section class="passport-left">
+          <p class="eyebrow"><i class="signal"></i> SKILL MAP</p><h2>我的 AI 能力地圖</h2><p class="lead">每一堂不必集滿五項；完成真正做得到的一小步，就解鎖一枚能力章。</p>
+          <div class="badge-map">
+            <div class="badge"><i>說</i><div><b>說清楚</b><span>把我的目標講明白</span></div></div>
+            <div class="badge"><i>找</i><div><b>找根據</b><span>指出我用的材料</span></div></div>
+            <div class="badge"><i>改</i><div><b>改一版</b><span>看結果，再提出改法</span></div></div>
+            <div class="badge"><i>問</i><div><b>找學伴</b><span>請 AI 考我，不替我答</span></div></div>
+            <div class="badge"><i>護</i><div><b>保護自己</b><span>不把私人資料交出去</span></div></div>
+          </div>
+          <div class="unlocked"><span class="unlock">✦</span><span>本堂解鎖：<b>說清楚</b> ＋ <b>找根據</b> ＋ <b>改一版</b></span></div>
+          <div class="cards-note"><b>本堂咒語卡：</b>只發「說、找、改」三張；卡片不書寫，孩子的想法寫在任務插頁。</div>
+        </section>
+        <section class="passport-right">
+          <p class="eyebrow"><i class="signal"></i> PASSPORT PAGES</p><h2>留下證據</h2><p class="lead">簽證不是獎勵貼紙，是我完成思考、查證與改版的紀錄。</p>
+          <section class="visa"><h3>MISSION 01 任務簽證</h3><p>咒語師完成本堂後，由查證官確認。</p><ul class="rules"><li>跟課本對過 2 題</li><li>家長蓋查證章</li><li>孩子說出自己的因果句</li></ul></section>
+          <section class="works"><h3>我的作品</h3><p>下一季放作品 QR 或網址貼紙；現在只先留位置。</p><div class="qr-box">QR／網址貼紙</div><div class="work-line"></div></section>
+          <div class="stamp">SPELLCASTER'S FIELD GUIDE　／　THINK · CAST · CHECK</div>
+        </section>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
