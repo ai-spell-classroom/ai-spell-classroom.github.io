@@ -65,6 +65,14 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 .box{display:inline-grid;place-items:center;width:34px;height:34px;border:3px solid var(--green);border-radius:8px;color:var(--green);font-size:20px}
 .fill{display:inline-block;min-width:150px;border-bottom:3px solid rgba(74,122,46,.45)}
 .qr-demo{display:grid;place-items:center;width:150px;height:150px;border:3px dashed var(--teal);border-radius:16px;background:rgba(255,255,255,.8);color:var(--teal);font-size:21px;font-weight:900;text-align:center;line-height:1.4}
+.vocab{position:absolute;top:44px;right:100px;display:flex;align-items:center;gap:12px;padding:10px 20px;border:2px solid var(--gold);border-radius:18px;background:#fff8e6}
+.vocab b{color:#7a6428;font-size:22px;font-weight:900}
+.vocab span{color:#8a7a4a;font-size:19px}
+.wall{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1240px;margin:0 auto}
+.wall .card{display:flex;gap:18px;align-items:center;padding:20px 26px}
+.wall .badge{width:60px;height:60px;font-size:28px;background:var(--gold)}
+.wall b{font-size:28px;color:var(--deep)}
+.wall span{display:block;font-size:22px;color:#5e705e;margin-top:2px}
 @media print{@page{size:16in 9in;margin:0}body{background:#fff}.slide{margin:0;box-shadow:none}}
 </style></head><body>
 
@@ -179,7 +187,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 <!-- 06 挑卡＝選來源 -->
 <section class="slide">
   <span class="kicker">來源</span>
-  <h1>挑卡，就是在選來源</h1>
+  <h1>挑卡，就是在選來源</h1><span class="vocab"><b>📖 上下文</b><span>先給答案，AI 就不亂編</span></span>
   <p class="sub">12 張詩詞來源卡——上面是課本原文，這就是你給 AI 的「根據」</p>
   <div class="duo">
     <div class="card">
@@ -208,7 +216,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 <!-- 07 逐字核對 -->
 <section class="slide">
   <span class="kicker">核對</span>
-  <h1>拍照後，先做這一步</h1>
+  <h1>拍照後，先做這一步</h1><span class="vocab"><b>📖 AI 幻覺</b><span>不知道也硬接，還接得很自信</span></span>
   <p class="sub">AI 是用「眼睛」認卡片上的字——它偶爾會認錯，所以要先核對</p>
   <div class="trio">
     <div class="card"><div class="cardhead"><span class="badge">1</span><b>請它逐字列出</b></div>
@@ -227,7 +235,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 <!-- 08 先寫護照再輸入 -->
 <section class="slide">
   <span class="kicker">實作</span>
-  <h1>現在，先寫護照再輸入</h1>
+  <h1>現在，先寫護照再輸入</h1><span class="vocab"><b>📖 提示詞</b><span>咒語的大人說法</span></span>
   <p class="sub">四步做出第一版——孩子的筆跡，是今天的思考證據</p>
   <div class="steps">
     <div class="step"><span class="badge">1</span><div class="card"><p><b>挑來源卡</b>：選 1–2 張詩詞卡，拍照給 AI</p><span class="say">🗣️「先把讀到的詩逐字列出來讓我核對」</span></div></div>
@@ -243,7 +251,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 <!-- 09 等它蓋房子＋救援句 -->
 <section class="slide">
   <span class="kicker">救援</span>
-  <h1>畫面跑出一堆程式碼？不用怕</h1>
+  <h1>畫面跑出一堆程式碼？不用怕</h1><span class="vocab"><b>📖 大型語言模型</b><span>把接龍練了幾十億次的高手</span></span>
   <p class="sub">那是 AI 在蓋房子——蓋好點「預覽」就能玩。卡住了？用救援句</p>
   <div class="steps">
     <div class="step"><span class="badge" style="background:var(--teal)">🗣️</span><div class="card"><p><b>講了一堆計畫卻沒動工？</b></p><span class="say">「請執行，把遊戲做出來。」</span></div></div>
@@ -286,7 +294,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
 <!-- 11 對兩題＋因果句 -->
 <section class="slide">
   <span class="kicker">簽證前</span>
-  <h1>對兩題，說出因果句</h1>
+  <h1>對兩題，說出因果句</h1><span class="vocab"><b>📖 迭代</b><span>高手都是一版一版改出來的</span></span>
   <p class="sub">查證官上場——這三格都打勾，才能蓋任務簽證</p>
   <div class="card" style="max-width:1100px;margin:0 auto">
     <div class="check3"><span class="box">□</span><div>跟來源卡或課本<b>對過 2 題</b>（查證官陪，不代答）</div></div>
@@ -354,7 +362,24 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
   <span class="pageno">14</span><span class="logo">🍀 Learn AI with Tarshar</span>
 </section>
 
-<!-- 15 給家長的下一步 -->
+
+<!-- 15 詞彙牆快問快答 -->
+<section class="slide">
+  <span class="kicker">收尾複習</span>
+  <h1>詞彙牆快問快答！</h1>
+  <p class="sub">今天你們都親手撞過這五個詞——我講白話，你們喊術語！</p>
+  <div class="wall">
+    <div class="card"><span class="badge">1</span><div><b>大型語言模型</b><span>把文字接龍練了幾十億次的高手</span></div></div>
+    <div class="card"><span class="badge">2</span><div><b>提示詞</b><span>跟 AI 點飲料——口味甜度冰塊講清楚</span></div></div>
+    <div class="card"><span class="badge">3</span><div><b>AI 幻覺</b><span>一本正經地亂編——所以要查證</span></div></div>
+    <div class="card"><span class="badge">4</span><div><b>迭代</b><span>一版一版改，還可以「回到上一版」</span></div></div>
+    <div class="card" style="grid-column:1/-1;max-width:620px;margin:0 auto"><span class="badge">5</span><div><b>上下文</b><span>先給來源和範圍，AI 亂猜的機率大幅下降</span></div></div>
+  </div>
+  <p class="quoteline">記下這五個詞，你就是 AI 溝通大師。</p>
+  <span class="pageno">15</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 16 給家長的下一步 -->
 <section class="slide">
   <span class="kicker">回家之後</span>
   <h1>給家長的下一步</h1>
@@ -369,10 +394,10 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
   </div>
   <div class="note-card">🔍 在家的角色不變：孩子操作、家長提問——「你原本想怎樣？為什麼改？」</div>
   <p class="quoteline">把 AI 放在學伴的位置，每一科都用得上。</p>
-  <span class="pageno">15</span><span class="logo">🍀 Learn AI with Tarshar</span>
+  <span class="pageno">16</span><span class="logo">🍀 Learn AI with Tarshar</span>
 </section>
 
-<!-- 16 收尾（節奏頁） -->
+<!-- 17 收尾（節奏頁） -->
 <section class="slide">
   <span class="brand">AI 開機日｜我的 AI 學伴上線了</span>
   <div class="cover-grid" style="margin-top:80px">
@@ -383,7 +408,7 @@ h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
     <img class="mascot" src="小D_角色概念示意_去背.png" alt="小 D">
   </div>
   <p class="quoteline">AI 陪我學，不替我寫。</p>
-  <span class="pageno">16</span><span class="logo">🍀 Learn AI with Tarshar</span>
+  <span class="pageno">17</span><span class="logo">🍀 Learn AI with Tarshar</span>
 </section>
 
 </body></html>
