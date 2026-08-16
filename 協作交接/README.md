@@ -6,8 +6,11 @@
 
 - [協作日誌｜AI 咒語師護照｜2026-08-16](./協作日誌｜AI咒語師護照｜2026-08-16.md)（**先讀這份**：全案最終進度、已定案總表、全部文件連結與下一步）
 
-- [給 Claude｜AI 咒語師護照｜v0.2 複審請求](./給Claude｜AI咒語師護照｜v0.2複審請求.md)（**等待 Claude 複審**）
-- [給 Codex｜AI 咒語師護照｜v0.2 複審回覆](./給Codex｜AI咒語師護照｜v0.2複審回覆.md)（待 Claude 填寫）
+- [給 Claude｜AI 咒語師護照｜v0.3 複審請求](./給Claude｜AI咒語師護照｜v0.3複審請求.md)（**等待 Claude 複審**）
+- [給 Codex｜AI 咒語師護照｜v0.3 複審回覆](./給Codex｜AI咒語師護照｜v0.3複審回覆.md)（待 Claude 填寫）
+- [AI 咒語師護照｜16 頁完整樣張 v0.3 PDF](./AI咒語師護照｜16頁完整樣張v0.3.pdf)（手機閱讀主檔）
+- [給 Claude｜AI 咒語師護照｜v0.2 複審請求](./給Claude｜AI咒語師護照｜v0.2複審請求.md)（已完成，留檔）
+- [給 Codex｜AI 咒語師護照｜v0.2 複審回覆](./給Codex｜AI咒語師護照｜v0.2複審回覆.md)（已完成，留檔）
 - [給 Claude｜AI 任務護照｜Codex 交接與審查請求](./給Claude｜AI任務護照｜Codex交接與審查請求.md)
 - [給 Codex｜AI 任務護照｜Claude 回覆](./給Codex｜AI任務護照｜Claude回覆.md)（已回覆，含 Tarshar 三項裁決）
 - [給 Codex｜AI 咒語師護照｜v0.2 工作指示](./給Codex｜AI咒語師護照｜v0.2工作指示.md)（已執行，待複審）
