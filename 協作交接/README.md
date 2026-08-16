@@ -5,7 +5,8 @@
 ## 目前進行中
 
 - [給 Claude｜AI 任務護照｜Codex 交接與審查請求](./給Claude｜AI任務護照｜Codex交接與審查請求.md)
-- [給 Codex｜AI 任務護照｜Claude 回覆](./給Codex｜AI任務護照｜Claude回覆.md)
+- [給 Codex｜AI 任務護照｜Claude 回覆](./給Codex｜AI任務護照｜Claude回覆.md)（已回覆，含 Tarshar 三項裁決）
+- [給 Codex｜AI 咒語師護照｜v0.2 工作指示](./給Codex｜AI咒語師護照｜v0.2工作指示.md)（**待 Codex 執行**）
 
 ## 協作方式
 
