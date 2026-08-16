@@ -1,0 +1,127 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>課堂簡報 v0.4 提案｜三頁風格校準</title>
+<style>
+:root{--paper:#fdf9f0;--ink:#303b30;--green:#4a7a2e;--deep:#315c28;--leaf:#7ab648;--teal:#176e77;--line:#c9d8b7;--soft:#eef6da;--mist:#d9f0ed;--gold:#c9a63c}
+*{box-sizing:border-box}
+body{margin:0;background:#dfeeea;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink)}
+.slide{position:relative;width:1600px;height:900px;overflow:hidden;margin:18px auto;padding:70px 100px;background:var(--paper);box-shadow:0 16px 38px rgba(55,84,51,.18);page-break-after:always;break-after:page}
+.slide:before{content:"";position:absolute;inset:0;opacity:.35;background-image:radial-gradient(rgba(74,122,46,.22) .6px,transparent .8px);background-size:7px 7px;pointer-events:none}
+.slide>*{position:relative}
+.brand{position:absolute;top:40px;right:100px;color:var(--deep);font-size:21px;font-weight:900;letter-spacing:.04em}
+.logo{position:absolute;bottom:34px;right:100px;color:var(--green);font-size:20px;font-weight:800}
+.pageno{position:absolute;bottom:34px;left:100px;color:#8a9a86;font-size:18px;font-weight:700;letter-spacing:.1em}
+.kicker{display:inline-block;margin:0 0 10px;padding:8px 22px;border-radius:24px;background:var(--deep);color:#fff;font-size:22px;font-weight:900;letter-spacing:.12em}
+h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
+.sub{margin:0 0 26px;color:var(--green);font-size:27px;font-weight:800}
+.quoteline{position:absolute;left:100px;right:100px;bottom:82px;padding-top:16px;border-top:3px solid var(--gold);color:#7a6428;font-size:25px;font-weight:900;text-align:center}
+/* 元件 */
+.badge{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:16px 16px 16px 4px;background:var(--green);color:#fff;font-size:26px;font-weight:900}
+.card{border:2px solid var(--line);border-radius:22px;background:rgba(255,255,255,.8);padding:24px 28px}
+.cardhead{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.cardhead b{font-size:29px;color:var(--deep)}
+.card li{font-size:24px;line-height:1.65;margin:6px 0}
+.card ul{margin:0;padding-left:30px}
+.tealtag{display:inline-block;padding:4px 14px;border-radius:14px;background:var(--mist);color:var(--teal);font-size:20px;font-weight:900;letter-spacing:.08em}
+/* 封面 */
+.cover-grid{display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center;margin-top:10px}
+.cover h1{font-size:76px;margin:14px 0 6px}
+.cover .sub{font-size:34px}
+.cover-pill{display:inline-block;margin:6px 10px 0 0;padding:10px 24px;border-radius:26px;border:2px solid var(--line);background:rgba(255,255,255,.75);font-size:24px;font-weight:800;color:#4f684e}
+.mascot{width:400px;display:block;margin:0 auto}
+.cover-info{display:flex;gap:18px;margin-top:30px}
+.cover-info .card{flex:1;padding:18px 22px}
+.cover-info b{display:block;font-size:22px;color:var(--teal);margin-bottom:4px}
+.cover-info span{font-size:24px;font-weight:800;color:var(--ink)}
+/* 雙欄對照 */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.duo .card.kid{border-color:var(--leaf);background:linear-gradient(180deg,rgba(238,246,218,.9),rgba(255,255,255,.85))}
+.duo .card.parent{border-color:#9cc4c9;background:linear-gradient(180deg,rgba(217,240,237,.75),rgba(255,255,255,.85))}
+.ai-strip{display:flex;align-items:center;gap:18px;margin-top:24px;padding:18px 28px;border:2px dashed var(--teal);border-radius:20px;background:rgba(255,255,255,.7)}
+.ai-strip b{font-size:27px;color:var(--teal)}
+.ai-strip span{font-size:24px;color:#3d5f5e}
+.no-do{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:22px;font-weight:800}
+.ok{color:var(--green)}.ng{color:#a3543f}
+/* 實作步驟頁 */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step .card{flex:1}
+.step p{margin:0;font-size:24px;line-height:1.6}
+.step .say{display:inline-block;margin-top:8px;padding:8px 16px;border-radius:12px;background:var(--soft);color:var(--deep);font-size:23px;font-weight:800}
+.rescue{margin-top:24px;padding:20px 28px;border-left:6px solid var(--gold);border-radius:0 18px 18px 0;background:#fff8e6}
+.rescue b{font-size:25px;color:#7a6428}
+.rescue span{font-size:23px;color:#6d613b}
+@media print{@page{size:16in 9in;margin:0}body{background:#fff}.slide{margin:0;box-shadow:none}}
+</style></head><body>
+
+<!-- 校準頁 1｜封面 -->
+<section class="slide cover">
+  <span class="brand">AI 開機日｜我的 AI 學伴上線了</span>
+  <div class="cover-grid">
+    <div>
+      <span class="kicker">親子共學・90 分鐘</span>
+      <h1>AI 陪跑教室<br>詩詞練功房</h1>
+      <p class="sub">今天，孩子親手做一個「考自己」的遊戲</p>
+      <div>
+        <span class="cover-pill">🧙 孩子＝咒語師</span>
+        <span class="cover-pill">🔍 家長＝查證官</span>
+        <span class="cover-pill">🤖 AI＝學伴</span>
+      </div>
+      <div class="cover-info">
+        <div class="card"><b>今天帶走</b><span>一冊護照＋三張咒語卡</span></div>
+        <div class="card"><b>使用工具</b><span>Gemini（瀏覽器版）</span></div>
+        <div class="card"><b>只記三個動作</b><span>先想 → 再說 → 再檢查</span></div>
+      </div>
+    </div>
+    <img class="mascot" src="小D_角色概念示意_去背.png" alt="小 D">
+  </div>
+  <p class="quoteline">AI 陪我學，不替我寫。</p>
+  <span class="pageno">01</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 校準頁 2｜一般內容頁：角色分工 -->
+<section class="slide">
+  <span class="kicker">角色</span>
+  <h1>誰來做？誰來查？</h1>
+  <p class="sub">今天最重要的一條線：手機在孩子手上，家長動口不動手</p>
+  <div class="duo">
+    <div class="card kid">
+      <div class="cardhead"><span class="badge">🧙</span><b>孩子＝咒語師</b><span class="tealtag">做決定的人</span></div>
+      <ul>
+        <li><b>選來源</b>：自己挑 1–2 張詩詞卡</li>
+        <li><b>下咒語</b>：先在護照寫想法，再說給 AI 聽</li>
+        <li><b>定改法</b>：第一版不滿意？由我決定怎麼改</li>
+      </ul>
+      <div class="no-do ng">✗ 不做的事：把作業丟給 AI 寫</div>
+    </div>
+    <div class="card parent">
+      <div class="cardhead"><span class="badge" style="background:var(--teal)">🔍</span><b>家長＝查證官</b><span class="tealtag">提問題的人</span></div>
+      <ul>
+        <li><b>只問不做</b>：「你原本想怎樣？為什麼改？」</li>
+        <li><b>陪對兩題</b>：拿課本跟遊戲對答案</li>
+        <li><b>最後蓋章</b>：查證通過，才蓋任務簽證</li>
+      </ul>
+      <div class="no-do ng">✗ 不做的事：忍不住幫孩子打字</div>
+    </div>
+  </div>
+  <div class="ai-strip"><b>🤖 AI＝學伴</b><span>照咒語師說的做、被查證官檢查——<b>它不是替孩子想完的人</b></span></div>
+  <p class="quoteline">孩子做決定，AI 幫忙發問。</p>
+  <span class="pageno">03</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 校準頁 3｜實作頁：動手做 -->
+<section class="slide">
+  <span class="kicker">實作</span>
+  <h1>現在，先寫護照再輸入</h1>
+  <p class="sub">四步做出第一版——孩子的筆跡，是今天的思考證據</p>
+  <div class="steps">
+    <div class="step"><span class="badge">1</span><div class="card"><p><b>挑來源卡</b>：選 1–2 張詩詞卡，拍照給 AI</p><span class="say">🗣️「先把讀到的詩逐字列出來讓我核對」</span></div></div>
+    <div class="step"><span class="badge">2</span><div class="card"><p><b>逐字核對</b>：對著卡片看，一個字一個字對</p><span class="say">🗣️ 全對才說「沒錯」；有錯就指出來</span></div></div>
+    <div class="step"><span class="badge">3</span><div class="card"><p><b>寫護照</b>：在護照寫下「我想改的玩法」</p><span class="say">✏️ 先寫、比讚，才可以輸入</span></div></div>
+    <div class="step"><span class="badge">4</span><div class="card"><p><b>貼咒語</b>：複製基底咒語，送出等 1–3 分鐘</p><span class="say">✅ 出現可以玩的「預覽」才算完成</span></div></div>
+  </div>
+  <div class="rescue"><b>🆘 救援句：</b><span>AI 講了一堆話卻沒動工？→ 說「<b>請執行，把遊戲做出來</b>」　｜　做到一半停住？→「請繼續」　｜　出現簡體字？→「改成台灣繁體中文」</span></div>
+  <p class="quoteline">先想、先寫，再對 AI 說。</p>
+  <span class="pageno">08</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+</body></html>
