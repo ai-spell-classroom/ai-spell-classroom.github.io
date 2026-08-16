@@ -1,0 +1,389 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 開機日｜課堂簡報 v0.4（護照往回推版）</title>
+<style>
+:root{--paper:#fdf9f0;--ink:#303b30;--green:#4a7a2e;--deep:#315c28;--leaf:#7ab648;--teal:#176e77;--line:#c9d8b7;--soft:#eef6da;--mist:#d9f0ed;--gold:#c9a63c}
+*{box-sizing:border-box}
+body{margin:0;background:#dfeeea;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink)}
+.slide{position:relative;width:1600px;height:900px;overflow:hidden;margin:18px auto;padding:70px 100px;background:var(--paper);box-shadow:0 16px 38px rgba(55,84,51,.18);page-break-after:always;break-after:page}
+.slide:before{content:"";position:absolute;inset:0;opacity:.35;background-image:radial-gradient(rgba(74,122,46,.22) .6px,transparent .8px);background-size:7px 7px;pointer-events:none}
+.slide>*{position:relative}
+.brand{position:absolute;top:40px;right:100px;color:var(--deep);font-size:21px;font-weight:900;letter-spacing:.04em}
+.logo{position:absolute;bottom:34px;right:100px;color:var(--green);font-size:20px;font-weight:800}
+.pageno{position:absolute;bottom:34px;left:100px;color:#8a9a86;font-size:18px;font-weight:700;letter-spacing:.1em}
+.kicker{display:inline-block;margin:0 0 10px;padding:8px 22px;border-radius:24px;background:var(--deep);color:#fff;font-size:22px;font-weight:900;letter-spacing:.12em}
+h1{margin:6px 0 8px;color:var(--deep);font-size:52px;line-height:1.25}
+.sub{margin:0 0 26px;color:var(--green);font-size:27px;font-weight:800}
+.quoteline{position:absolute;left:100px;right:100px;bottom:82px;padding-top:16px;border-top:3px solid var(--gold);color:#7a6428;font-size:25px;font-weight:900;text-align:center}
+.badge{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:16px 16px 16px 4px;background:var(--green);color:#fff;font-size:26px;font-weight:900}
+.card{border:2px solid var(--line);border-radius:22px;background:rgba(255,255,255,.8);padding:24px 28px}
+.cardhead{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.cardhead b{font-size:29px;color:var(--deep)}
+.card li{font-size:24px;line-height:1.65;margin:6px 0}
+.card ul{margin:0;padding-left:30px}
+.tealtag{display:inline-block;padding:4px 14px;border-radius:14px;background:var(--mist);color:var(--teal);font-size:20px;font-weight:900;letter-spacing:.08em}
+.cover-grid{display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center;margin-top:10px}
+.cover h1{font-size:76px;margin:14px 0 6px}
+.cover .sub{font-size:34px}
+.cover-pill{display:inline-block;margin:6px 10px 0 0;padding:10px 24px;border-radius:26px;border:2px solid var(--line);background:rgba(255,255,255,.75);font-size:24px;font-weight:800;color:#4f684e}
+.mascot{width:400px;display:block;margin:0 auto}
+.cover-info{display:flex;gap:18px;margin-top:30px}
+.cover-info .card{flex:1;padding:18px 22px}
+.cover-info b{display:block;font-size:22px;color:var(--teal);margin-bottom:4px}
+.cover-info span{font-size:24px;font-weight:800;color:var(--ink)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.duo .card.kid{border-color:var(--leaf);background:linear-gradient(180deg,rgba(238,246,218,.9),rgba(255,255,255,.85))}
+.duo .card.parent{border-color:#9cc4c9;background:linear-gradient(180deg,rgba(217,240,237,.75),rgba(255,255,255,.85))}
+.ai-strip{display:flex;align-items:center;gap:18px;margin-top:24px;padding:18px 28px;border:2px dashed var(--teal);border-radius:20px;background:rgba(255,255,255,.7)}
+.ai-strip b{font-size:27px;color:var(--teal)}
+.ai-strip span{font-size:24px;color:#3d5f5e}
+.no-do{display:flex;gap:10px;align-items:center;margin-top:10px;font-size:22px;font-weight:800}
+.ok{color:var(--green)}.ng{color:#a3543f}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step .card{flex:1}
+.step p{margin:0;font-size:24px;line-height:1.6}
+.step .say{display:inline-block;margin-top:8px;padding:8px 16px;border-radius:12px;background:var(--soft);color:var(--deep);font-size:23px;font-weight:800}
+.rescue{margin-top:24px;padding:20px 28px;border-left:6px solid var(--gold);border-radius:0 18px 18px 0;background:#fff8e6}
+.rescue b{font-size:25px;color:#7a6428}
+.rescue span{font-size:23px;color:#6d613b}
+.seal{display:grid;place-items:center;width:96px;height:96px;border-radius:26px;border:3px solid var(--green);background:rgba(255,255,255,.85);color:var(--deep);font-size:40px;font-weight:900}
+.seal.locked{border-style:dashed;color:#9aa896;border-color:#b9c7b4}
+.seal.dashed{border-style:dashed;color:var(--teal);border-color:var(--teal)}
+.sealrow{display:flex;gap:34px;justify-content:center;margin:24px 0 10px}
+.sealcap{width:96px;text-align:center;font-size:20px;font-weight:800;color:#5e705e;margin-top:6px}
+.bigsay{margin:60px auto 20px;max-width:1260px;padding:44px 60px;border:3px solid var(--teal);border-radius:30px;background:rgba(255,255,255,.85);color:var(--teal);font-size:46px;font-weight:900;line-height:1.6;text-align:center}
+.note-card{margin-top:18px;padding:16px 24px;border-radius:16px;background:var(--soft);color:#4f684e;font-size:23px;font-weight:700}
+.visa{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+.visa .card{padding:16px 14px;text-align:center}
+.visa b{display:block;font-size:22px;color:var(--deep);margin-bottom:6px}
+.visa span{font-size:19px;color:#5e705e;display:block;line-height:1.5}
+.visa .today{border-color:var(--green);background:linear-gradient(180deg,rgba(238,246,218,.95),rgba(255,255,255,.9))}
+.check3{display:flex;gap:14px;align-items:flex-start;font-size:24px;font-weight:800;color:var(--deep);margin:14px 0;line-height:1.7}
+.check3>.box{margin-top:4px;flex:none}
+.check3>div{flex:1}
+.box{display:inline-grid;place-items:center;width:34px;height:34px;border:3px solid var(--green);border-radius:8px;color:var(--green);font-size:20px}
+.fill{display:inline-block;min-width:150px;border-bottom:3px solid rgba(74,122,46,.45)}
+.qr-demo{display:grid;place-items:center;width:150px;height:150px;border:3px dashed var(--teal);border-radius:16px;background:rgba(255,255,255,.8);color:var(--teal);font-size:21px;font-weight:900;text-align:center;line-height:1.4}
+@media print{@page{size:16in 9in;margin:0}body{background:#fff}.slide{margin:0;box-shadow:none}}
+</style></head><body>
+
+<!-- 01 封面 -->
+<section class="slide cover">
+  <span class="brand">AI 開機日｜我的 AI 學伴上線了</span>
+  <div class="cover-grid">
+    <div>
+      <span class="kicker">親子共學・90 分鐘</span>
+      <h1>AI 陪跑教室<br>詩詞練功房</h1>
+      <p class="sub">今天，孩子親手做一個「考自己」的遊戲</p>
+      <div>
+        <span class="cover-pill">🧙 孩子＝咒語師</span>
+        <span class="cover-pill">🔍 家長＝查證官</span>
+        <span class="cover-pill">🤖 AI＝學伴</span>
+      </div>
+      <div class="cover-info">
+        <div class="card"><b>今天帶走</b><span>一冊護照＋三張咒語卡</span></div>
+        <div class="card"><b>使用工具</b><span>Gemini（瀏覽器版）</span></div>
+        <div class="card"><b>只記三個動作</b><span>先想 → 再說 → 再檢查</span></div>
+      </div>
+    </div>
+    <img class="mascot" src="小D_角色概念示意_去背.png" alt="小 D">
+  </div>
+  <p class="quoteline">AI 陪我學，不替我寫。</p>
+  <span class="pageno">01</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 02 今天帶走什麼 -->
+<section class="slide">
+  <span class="kicker">成果</span>
+  <h1>帶走的不是一張答案</h1>
+  <p class="sub">是一本會越用越厚的「AI 咒語師護照」——裡面留的都是你自己的痕跡</p>
+  <div class="trio">
+    <div class="card"><div class="cardhead"><span class="badge">📖</span><b>我選的來源</b></div>
+      <ul><li>詩詞卡由<b>我自己挑</b></li><li>貼在護照第 4 頁</li><li>證明：來源是我選的，不是 AI 給的</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">✏️</span><b>我寫的改法</b></div>
+      <ul><li>咒語<b>先手寫</b>在護照上</li><li>再說給 AI 聽</li><li>證明：想法是我的，AI 只是照做</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">🔍</span><b>查證官的簽證</b></div>
+      <ul><li>對過課本 2 題才蓋章</li><li>蓋在護照第 14 頁</li><li>證明：作品是查證過的</li></ul></div>
+  </div>
+  <div class="note-card">📎 另外還有三張<b>咒語卡</b>：它們只負責提醒三個動作——<b>卡片不用填寫，真正的想法寫在護照裡。</b></div>
+  <p class="quoteline">護照裡的每一個字，都是「我怎麼想」的證據。</p>
+  <span class="pageno">02</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 03 角色 -->
+<section class="slide">
+  <span class="kicker">角色</span>
+  <h1>誰來做？誰來查？</h1>
+  <p class="sub">今天最重要的一條線：手機在孩子手上，家長動口不動手</p>
+  <div class="duo">
+    <div class="card kid">
+      <div class="cardhead"><span class="badge">🧙</span><b>孩子＝咒語師</b><span class="tealtag">做決定的人</span></div>
+      <ul>
+        <li><b>選來源</b>：自己挑 1–2 張詩詞卡</li>
+        <li><b>下咒語</b>：先在護照寫想法，再說給 AI 聽</li>
+        <li><b>定改法</b>：第一版不滿意？由我決定怎麼改</li>
+      </ul>
+      <div class="no-do ng">✗ 不做的事：把作業丟給 AI 寫</div>
+    </div>
+    <div class="card parent">
+      <div class="cardhead"><span class="badge" style="background:var(--teal)">🔍</span><b>家長＝查證官</b><span class="tealtag">提問題的人</span></div>
+      <ul>
+        <li><b>只問不做</b>：「你原本想怎樣？為什麼改？」</li>
+        <li><b>陪對兩題</b>：拿課本跟遊戲對答案</li>
+        <li><b>最後蓋章</b>：查證通過，才蓋任務簽證</li>
+      </ul>
+      <div class="no-do ng">✗ 不做的事：忍不住幫孩子打字</div>
+    </div>
+  </div>
+  <div class="ai-strip"><b>🤖 AI＝學伴</b><span>照咒語師說的做、被查證官檢查——<b>它不是替孩子想完的人</b></span></div>
+  <p class="quoteline">孩子做決定，AI 幫忙發問。</p>
+  <span class="pageno">03</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 04 三個動作 -->
+<section class="slide">
+  <span class="kicker">三個動作</span>
+  <h1>今天只記住三個動作</h1>
+  <p class="sub">手上的三張咒語卡，一張卡＝一個動作</p>
+  <div class="trio">
+    <div class="card"><div class="cardhead"><span class="badge">1</span><b>先想 THINK</b></div>
+      <ul><li>我要練什麼？</li><li>我選哪個來源？</li><li>❓ 想不清楚就先翻課本，不先問 AI</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">2</span><b>再說 CAST</b></div>
+      <ul><li>我希望 AI 怎麼做？</li><li>先寫在護照上，再輸入</li><li>🗣️ 講得越清楚，做出來越像你要的</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">3</span><b>再檢查 CHECK</b></div>
+      <ul><li>它真的照做了嗎？</li><li>跟來源卡／課本對答案</li><li>🔍 查證官這時候才上場</li></ul></div>
+  </div>
+  <div class="note-card">🎴 <b>咒語卡是提醒卡，不是填寫卡</b>——它護貝過不能寫字；真正的想法，寫進護照。</div>
+  <p class="quoteline">這不是複製貼上課；每個作品都要留下「我怎麼讓它變好」的證據。</p>
+  <span class="pageno">04</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 05 能力地圖 -->
+<section class="slide">
+  <span class="kicker">能力地圖</span>
+  <h1>我正在練哪一種 AI 能力？</h1>
+  <p class="sub">翻開護照第 3 頁——五個章，蓋滿它需要五次實作</p>
+  <div class="sealrow">
+    <div><div class="seal">說</div><div class="sealcap">說清楚<br>今天解鎖</div></div>
+    <div><div class="seal">找</div><div class="sealcap">找根據<br>今天解鎖</div></div>
+    <div><div class="seal">改</div><div class="sealcap">改一版<br>今天解鎖</div></div>
+    <div><div class="seal dashed">問</div><div class="sealcap">請 AI 考我<br>課末體驗</div></div>
+    <div><div class="seal locked">護</div><div class="sealcap">保護自己<br>之後解鎖</div></div>
+  </div>
+  <div class="note-card" style="text-align:center">🔓 「問」今天先給<b>虛線體驗章</b>——課末每個人親自操作 3 分鐘，真的做了才有；正式滿章留到下一堂。</div>
+  <p class="quoteline">今天先練三個：說清楚、找根據、改一版。</p>
+  <span class="pageno">05</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 06 挑卡＝選來源 -->
+<section class="slide">
+  <span class="kicker">來源</span>
+  <h1>挑卡，就是在選來源</h1>
+  <p class="sub">12 張詩詞來源卡——上面是課本原文，這就是你給 AI 的「根據」</p>
+  <div class="duo">
+    <div class="card">
+      <div class="cardhead"><span class="badge">🎴</span><b>怎麼挑</b></div>
+      <ul>
+        <li>每個人選 <b>1 到 2 張</b>自己想練的詩</li>
+        <li>卡片是給<b>人和 AI 看清楚的原文</b></li>
+        <li>不是拿來填空、也不用抄寫</li>
+        <li>選好的卡，等一下拍照給 AI</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="cardhead"><span class="badge" style="background:#a3543f">⚠️</span><b>為什麼不讓 AI 自己背詩</b></div>
+      <ul>
+        <li>AI 不知道答案時會<b>一本正經地亂編</b></li>
+        <li>詩詞的權威來源＝<b>課本</b>，不是 AI 的記憶</li>
+        <li>在家沒帶卡？<b>直接拍課本</b>，一樣有效</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note-card">💡 記住這句話：<b>來源自己選、自己給</b>——不是 AI 說什麼都對。</div>
+  <p class="quoteline">先給來源，AI 才不會編故事。</p>
+  <span class="pageno">06</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 07 逐字核對 -->
+<section class="slide">
+  <span class="kicker">核對</span>
+  <h1>拍照後，先做這一步</h1>
+  <p class="sub">AI 是用「眼睛」認卡片上的字——它偶爾會認錯，所以要先核對</p>
+  <div class="trio">
+    <div class="card"><div class="cardhead"><span class="badge">1</span><b>請它逐字列出</b></div>
+      <ul><li>基底咒語會先要求：</li></ul>
+      <div class="step" style="margin-top:6px"><span class="say">🗣️「先把讀到的每一首詩逐字列出來讓我核對」</span></div></div>
+    <div class="card"><div class="cardhead"><span class="badge">2</span><b>對著卡片檢查</b></div>
+      <ul><li>咒語師對卡片，<b>一個字一個字對</b></li><li>查證官在旁邊陪孩子找不一樣的字</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">3</span><b>說「沒錯」才開始</b></div>
+      <ul><li>全對 → 說「<b>沒錯</b>」，AI 才能動工</li><li>有錯 → 指出來：「這個字和我的來源不一樣，請改成＿＿」</li></ul></div>
+  </div>
+  <div class="note-card">🔍 這一步不只是防錯——<b>它本身就是今天的查證練習</b>：AI 說的，永遠要跟來源對過。</div>
+  <p class="quoteline">我說「沒錯」以前，AI 不准動工。</p>
+  <span class="pageno">07</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 08 先寫護照再輸入 -->
+<section class="slide">
+  <span class="kicker">實作</span>
+  <h1>現在，先寫護照再輸入</h1>
+  <p class="sub">四步做出第一版——孩子的筆跡，是今天的思考證據</p>
+  <div class="steps">
+    <div class="step"><span class="badge">1</span><div class="card"><p><b>挑來源卡</b>：選 1–2 張詩詞卡，拍照給 AI</p><span class="say">🗣️「先把讀到的詩逐字列出來讓我核對」</span></div></div>
+    <div class="step"><span class="badge">2</span><div class="card"><p><b>逐字核對</b>：對著卡片看，一個字一個字對</p><span class="say">🗣️ 全對才說「沒錯」；有錯就指出來</span></div></div>
+    <div class="step"><span class="badge">3</span><div class="card"><p><b>寫護照</b>：在護照寫下「我想改的玩法」</p><span class="say">✏️ 先寫、比讚，才可以輸入</span></div></div>
+    <div class="step"><span class="badge">4</span><div class="card"><p><b>貼咒語</b>：複製基底咒語，送出等 1–3 分鐘</p><span class="say">✅ 出現可以玩的「預覽」才算完成</span></div></div>
+  </div>
+  <div class="rescue"><b>🖐️ 給查證官：</b><span>這一段請忍住「幫他打」的手——孩子自己操作，是這堂課設計的核心。</span></div>
+  <p class="quoteline">先想、先寫，再對 AI 說。</p>
+  <span class="pageno">08</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 09 等它蓋房子＋救援句 -->
+<section class="slide">
+  <span class="kicker">救援</span>
+  <h1>畫面跑出一堆程式碼？不用怕</h1>
+  <p class="sub">那是 AI 在蓋房子——蓋好點「預覽」就能玩。卡住了？用救援句</p>
+  <div class="steps">
+    <div class="step"><span class="badge" style="background:var(--teal)">🗣️</span><div class="card"><p><b>講了一堆計畫卻沒動工？</b></p><span class="say">「請執行，把遊戲做出來。」</span></div></div>
+    <div class="step"><span class="badge" style="background:var(--teal)">⏸️</span><div class="card"><p><b>做到一半停住了？</b></p><span class="say">「請繼續。」</span></div></div>
+    <div class="step"><span class="badge" style="background:var(--teal)">🈲</span><div class="card"><p><b>出現簡體字？</b></p><span class="say">「請全部改成台灣用的繁體中文。」</span></div></div>
+    <div class="step"><span class="badge" style="background:var(--teal)">🩹</span><div class="card"><p><b>改壞了、按鈕按不下去？</b></p><span class="say">講症狀給它聽；不行就說「回到上一版」。</span></div></div>
+  </div>
+  <div class="note-card">✅ <b>什麼才算完成？</b>出現<b>可以玩的「預覽」</b>才算——看到一堆程式或計畫，都還不算。</div>
+  <p class="quoteline">AI 卡住，我有辦法。</p>
+  <span class="pageno">09</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 10 它有照做嗎 -->
+<section class="slide">
+  <span class="kicker">查證</span>
+  <h1>它有照做嗎？</h1>
+  <p class="sub">第一版出來了——先不要急著加特效，翻開護照第 5 頁</p>
+  <div class="duo">
+    <div class="card">
+      <div class="cardhead"><span class="badge">🔎</span><b>對照我寫的咒語</b></div>
+      <ul>
+        <li>新版本有沒有<b>真的照我寫的改變</b>？</li>
+        <li>護照勾一格：<span class="box">✓</span> 有照做　／　<span class="box"></span> 還要再說清楚一次</li>
+        <li>寫下：「我發現 <span class="fill"></span>」</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="cardhead"><span class="badge" style="background:#a3543f">🙅</span><b>不照單全收</b></div>
+      <ul>
+        <li>AI 做出來 ≠ 做對了</li>
+        <li>沒照做不是失敗——是<b>再說清楚一次</b>的機會</li>
+        <li>說不清楚？回到咒語卡第 1 張：先想</li>
+      </ul>
+    </div>
+  </div>
+  <p class="quoteline">我不照單全收；我要看它有沒有照我說的做。</p>
+  <span class="pageno">10</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 11 對兩題＋因果句 -->
+<section class="slide">
+  <span class="kicker">簽證前</span>
+  <h1>對兩題，說出因果句</h1>
+  <p class="sub">查證官上場——這三格都打勾，才能蓋任務簽證</p>
+  <div class="card" style="max-width:1100px;margin:0 auto">
+    <div class="check3"><span class="box">□</span><div>跟來源卡或課本<b>對過 2 題</b>（查證官陪，不代答）</div></div>
+    <div class="check3"><span class="box">□</span><div>我說得出<b>因果句</b>：<br>「我原本 <span class="fill"></span>；我改成 <span class="fill"></span>；所以現在 <span class="fill"></span>。」</div></div>
+    <div class="check3"><span class="box">□</span><div>查證官<b>蓋章</b>（蓋在護照第 5 頁）</div></div>
+  </div>
+  <div class="note-card" style="max-width:1100px;margin:20px auto 0">💬 <b>查證官的問法</b>：不說「這裡錯了」，改問「這一題跟課本一樣嗎？」——讓孩子自己發現。</div>
+  <p class="quoteline">因果句說得出來，才是真的學會。</p>
+  <span class="pageno">11</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 12 任務簽證 -->
+<section class="slide">
+  <span class="kicker">儀式</span>
+  <h1>今天的儀式：任務簽證</h1>
+  <p class="sub">護照第 14 頁有五格——每一格不是集點貼紙，是思考、查證與改版的紀錄</p>
+  <div class="visa">
+    <div class="card today"><b>MISSION 01</b><span>詩詞練功房<br><b>← 今天蓋這格</b></span></div>
+    <div class="card"><b>MISSION 02</b><span>台灣歷史時光機<br>回家功課</span></div>
+    <div class="card"><b>MISSION 03</b><span>＿＿＿＿<br>之後的實作</span></div>
+    <div class="card"><b>MISSION 04</b><span>＿＿＿＿<br>之後的實作</span></div>
+    <div class="card"><b>MISSION 05</b><span>＿＿＿＿<br>之後的實作</span></div>
+  </div>
+  <div class="note-card">📖 3～5 格是<b>空白模板</b>——之後每完成一次實作，孩子自己寫上名字、自己蓋章，護照會越用越厚。</div>
+  <div class="note-card">🚫 不是另發執照——是把你<b>真的完成的思考</b>，蓋進自己的護照。</div>
+  <p class="quoteline">每蓋一格，回頭看看：我寫的咒語，真的讓作品變不一樣了嗎？</p>
+  <span class="pageno">12</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 13 作品換 QR -->
+<section class="slide">
+  <span class="kicker">交換</span>
+  <h1>作品完成，換 QR 貼紙</h1>
+  <p class="sub">自己的作品貼實作頁；護照第 15 頁，專門收咒語師夥伴的作品</p>
+  <div class="duo">
+    <div class="card">
+      <div class="cardhead"><span class="badge">📌</span><b>怎麼換</b></div>
+      <ul>
+        <li>老師把你的作品連結印成 <b>QR 貼紙</b></li>
+        <li>自己的 → 貼護照<b>第 5 頁</b>「這一堂我的作品」</li>
+        <li>再收集 <b>4 位咒語師夥伴</b>的，貼第 15 頁</li>
+        <li>回家掃一掃，就能玩全班的遊戲</li>
+      </ul>
+    </div>
+    <div class="card" style="display:flex;gap:24px;align-items:center">
+      <div class="qr-demo">QR 貼紙位<br>40×50mm</div>
+      <ul style="padding-left:20px">
+        <li><b>交換前老師先檢查</b>：用無痕視窗打開連結</li>
+        <li>確定<b>別人也能玩</b>，才印成貼紙</li>
+        <li>連結壞了？回去按一次「分享」重拿</li>
+      </ul>
+    </div>
+  </div>
+  <p class="quoteline">五本護照互相收藏，就是全班的作品牆。</p>
+  <span class="pageno">13</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 14 AI 學伴上線（節奏頁） -->
+<section class="slide">
+  <span class="kicker">課末 10 分鐘</span>
+  <h1>AI 學伴上線：輪到我操作</h1>
+  <div class="bigsay">「請考我這首詩，<br>一次一題，不要直接給答案。」</div>
+  <div class="note-card" style="max-width:1100px;margin:14px auto 0;text-align:center">每位咒語師親自操作 <b>3 分鐘</b>：親眼看 AI 出題、自己作答 → 領「問」的<b>虛線體驗章</b></div>
+  <p class="quoteline">AI 考我，不替我答——這就是「學伴」的意思。</p>
+  <span class="pageno">14</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 15 給家長的下一步 -->
+<section class="slide">
+  <span class="kicker">回家之後</span>
+  <h1>給家長的下一步</h1>
+  <p class="sub">今天的 90 分鐘是起點——護照後面的頁數，留給接下來的日常</p>
+  <div class="trio">
+    <div class="card"><div class="cardhead"><span class="badge" style="background:var(--teal)">📋</span><b>問卷／同意書</b></div>
+      <ul><li>掃現場立牌／行前訊息的 <b>QR</b></li><li>問卷<b>不放在護照裡</b>——護照是孩子的紀念品</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">🏠</span><b>回家功課（實作二）</b></div>
+      <ul><li><b>台灣歷史時光機</b>——護照第 6–7 頁</li><li>流程跟今天一模一樣：先想、再說、再檢查</li></ul></div>
+    <div class="card"><div class="cardhead"><span class="badge">💬</span><b>日常就能玩</b></div>
+      <ul><li>「請考我台灣歷史 8 題」</li><li>「請考我這課的生字，一次一題」</li><li>換個科目，咒語一樣好用</li></ul></div>
+  </div>
+  <div class="note-card">🔍 在家的角色不變：孩子操作、家長提問——「你原本想怎樣？為什麼改？」</div>
+  <p class="quoteline">把 AI 放在學伴的位置，每一科都用得上。</p>
+  <span class="pageno">15</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+<!-- 16 收尾（節奏頁） -->
+<section class="slide">
+  <span class="brand">AI 開機日｜我的 AI 學伴上線了</span>
+  <div class="cover-grid" style="margin-top:80px">
+    <div>
+      <h1 style="font-size:72px">把第一個<br>好問題帶回家。</h1>
+      <p class="sub" style="font-size:30px;margin-top:20px">會用 AI，不是把答案變快——<br>是知道自己要學什麼、怎麼查證，<br>還能把下一版說得更好。</p>
+    </div>
+    <img class="mascot" src="小D_角色概念示意_去背.png" alt="小 D">
+  </div>
+  <p class="quoteline">AI 陪我學，不替我寫。</p>
+  <span class="pageno">16</span><span class="logo">🍀 Learn AI with Tarshar</span>
+</section>
+
+</body></html>
