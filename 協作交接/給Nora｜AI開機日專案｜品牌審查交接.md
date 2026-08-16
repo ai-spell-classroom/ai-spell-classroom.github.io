@@ -1,4 +1,4 @@
-# 給 Nora｜AI 咒語師專案｜品牌審查交接
+# 給 Nora｜AI 開機日專案｜品牌審查交接
 
 **發件者：** Claude（受 Tarshar 委託撰寫）
 **決策者：** Tarshar（唯一裁決者）
@@ -14,12 +14,15 @@
 | --- | --- | --- |
 | 1 | 本檔 | 範圍、已定案、你要審什麼 |
 | 2 | [協作交接區 README](./README.md) | 三方協作的規則 |
-| 3 | [全案一致性盤點回覆](./給Codex｜AI咒語師專案｜v0.3前全案一致性盤點回覆.md) | **Tarshar 所有裁決的集散地**；第 3 節就是視覺系統的現況分析 |
-| 4 | [AI 協作日誌 02](https://github.com/tarshar4242/kt-sweet-journey/blob/main/docs/AI協作日誌02-AI咒語師護照.md) | 想知道某個決定「為什麼這樣定」，看這份（在另一個 repo） |
+| 3 | [全案一致性盤點回覆](./給Codex｜AI開機日專案｜v0.3前全案一致性盤點回覆.md) | **Tarshar 所有裁決的集散地**；第 3 節就是視覺系統的現況分析 |
+| 4 | [AI 協作日誌 02](https://github.com/tarshar4242/kt-sweet-journey/blob/main/docs/AI協作日誌02-AI開機日.md) | 想知道某個決定「為什麼這樣定」，看這份（在另一個 repo） |
 
 ---
 
 ## 二、專案是什麼
+
+**專案名稱：AI 開機日｜我的 AI 學伴上線了。**
+（⚠️ 請注意層級：「AI 咒語師護照」只是本專案底下的**一件教具**，不是專案名。本資料夾早期有些檔案沿用教具名，那是命名疏失，以本節為準。）
 
 國小中高年級的親子共學 AI 入門課。孩子當天親手用 AI 做出一個複習自己功課的小遊戲，並帶回一本可以持續使用的護照。
 
@@ -122,21 +125,21 @@
 
 ### 5-3 視覺參考
 
-- [課堂簡報視覺參考圖（PNG）](https://ai-spell-classroom.github.io/協作交接/AI咒語師專案｜課堂簡報視覺參考.png)——現行簡報首頁
+- [課堂簡報視覺參考圖（PNG）](https://ai-spell-classroom.github.io/協作交接/AI開機日專案｜課堂簡報視覺參考.png)——現行簡報首頁
 - [小 D 角色概念示意圖](https://ai-spell-classroom.github.io/協作交接/assets/小D_角色概念示意.png)——**AI 生成的氣質示意，非印刷素材**
 
 ### 5-4 決策脈絡文件（GitHub）
 
 Repo：`ai-spell-classroom/ai-spell-classroom.github.io`，資料夾 `協作交接/`
 
-- [全案一致性盤點回覆](./給Codex｜AI咒語師專案｜v0.3前全案一致性盤點回覆.md)——**最重要**，含視覺系統盤點與全部裁決
-- [v0.3.2 定版複審回覆](./給Codex｜AI咒語師專案｜v0.3.2定版複審回覆.md)——最終驗收與放行紀錄
-- [v0.3.1 複審回覆](./給Codex｜AI咒語師專案｜v0.3.1複審回覆.md)／[v0.3 複審回覆](./給Codex｜AI咒語師護照｜v0.3複審回覆.md)／[v0.2 複審回覆](./給Codex｜AI咒語師護照｜v0.2複審回覆.md)／[首輪審查回覆](./給Codex｜AI任務護照｜Claude回覆.md)
-- [交接進度索引](./交接進度索引｜AI咒語師護照｜2026-08-16.md)——檔案清單與定案總表
+- [全案一致性盤點回覆](./給Codex｜AI開機日專案｜v0.3前全案一致性盤點回覆.md)——**最重要**，含視覺系統盤點與全部裁決
+- [v0.3.2 定版複審回覆](./給Codex｜AI開機日專案｜v0.3.2定版複審回覆.md)——最終驗收與放行紀錄
+- [v0.3.1 複審回覆](./給Codex｜AI開機日專案｜v0.3.1複審回覆.md)／[v0.3 複審回覆](./給Codex｜AI咒語師護照｜v0.3複審回覆.md)／[v0.2 複審回覆](./給Codex｜AI咒語師護照｜v0.2複審回覆.md)／[首輪審查回覆](./給Codex｜AI任務護照｜Claude回覆.md)
+- [交接進度索引](./交接進度索引｜AI開機日｜2026-08-16.md)——檔案清單與定案總表
 - [講義同步清單](./講義同步清單｜線上教材對裁決盤點.md)——線上四頁還要改哪幾處
 
 另一個 repo `tarshar4242/kt-sweet-journey`：
-- [AI 協作日誌 02](https://github.com/tarshar4242/kt-sweet-journey/blob/main/docs/AI協作日誌02-AI咒語師護照.md)——完整決策脈絡與偏航紀錄
+- [AI 協作日誌 02](https://github.com/tarshar4242/kt-sweet-journey/blob/main/docs/AI協作日誌02-AI開機日.md)——完整決策脈絡與偏航紀錄
 - `CLAUDE.md`——Tarshar 的全案工作規則（含品牌名帶 🍀 的規定）
 
 ---
@@ -169,7 +172,7 @@ Repo：`ai-spell-classroom/ai-spell-classroom.github.io`，資料夾 `協作交�
 
 ## 八、怎麼回覆
 
-請在本資料夾建立 `給Tarshar｜AI咒語師專案｜Nora品牌審查回覆.md`，內容建議包含：
+請在本資料夾建立 `給Tarshar｜AI開機日專案｜Nora品牌審查回覆.md`，內容建議包含：
 
 1. **總結**：目前品牌系統是「可直接上場／需小修／有結構性問題」。
 2. **五項未拍板事項的建議**（第四節 ❶–❺），每項給：結論／理由／最小可行做法。
